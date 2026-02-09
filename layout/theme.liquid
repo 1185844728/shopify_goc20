@@ -30,7 +30,7 @@
           if (args[0] === 'event') {
             // 强制所有事件走 server_container_url
             if (!args[2]) args[2] = {};
-            args[2].transport_url = 'https://analytics2.globaloneclick.info';
+            args[2].server_container_url = 'https://analytics2.globaloneclick.info';
           }
           originalGtag.apply(this, args);
         }
