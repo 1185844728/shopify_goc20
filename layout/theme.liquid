@@ -10,7 +10,7 @@
     })(window,document,'script','dataLayer','GTM-5652JKZG');</script>
     <!-- End Google Tag Manager -->
 
-    <script>
+    {% comment %} <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
@@ -19,6 +19,23 @@
       gtag('config', 'G-NMS0D4TY92', {
         server_container_url: 'https://analytics2.globaloneclick.info'
       });
+    </script> {% endcomment %}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      if (window.gtag) {
+        const originalGtag = window.gtag;
+        window.gtag = function() {
+          const args = Array.from(arguments);
+          if (args[0] === 'event') {
+            // 强制所有事件走 server_container_url
+            if (!args[2]) args[2] = {};
+            args[2].transport_url = 'https://analytics2.globaloneclick.info';
+          }
+          originalGtag.apply(this, args);
+        }
+      }
+    });
     </script>
 
     <meta charset="utf-8">
