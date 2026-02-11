@@ -369,4 +369,37 @@
     {%- endif -%}
 
     </body>
+
+    <script>
+      // 方式一：GA4 直接写入 (gtag.js)
+      // 这种方式直接绕过 GTM，将数据发送到 G-NMS0D4TY92
+      function testGA4Direct() {
+        console.log('触发：GA4 直接写入');
+        gtag('event', 'test_method_ga4', {
+          'event_category': 'testing',
+          'method_name': 'direct_gtag'
+        });
+      }
+
+      // 方式二：GTM 事件写入 (dataLayer.push)
+      // 这种方式将事件推送到 dataLayer，需要你在 GTM 后台配置触发器和 GA4 标签来接收
+      function testGTMEvent() {
+        console.log('触发：GTM dataLayer 写入');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'test_method_gtm',
+          'testing_param': 'pushed_via_datalayer'
+        });
+      }
+
+      // 自动触发测试（仅用于页面加载时测试，生产环境建议绑定在按钮上）
+      document.addEventListener('DOMContentLoaded', function() {
+        // 为了防止页面加载太快无法捕捉，延迟 2 秒触发
+        setTimeout(function() {
+          testGA4Direct();
+          testGTMEvent();
+        }, 2000);
+      });
+    </script>
+
 </html>
