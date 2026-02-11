@@ -291,7 +291,7 @@
     </script>
     </head>
 
-    <script async src="https://goc.globaloneclick.info/gtag/js?id=G-NMS0D4TY92"></script>
+    {% comment %} <script async src="https://goc.globaloneclick.info/gtag/js?id=G-NMS0D4TY92"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -301,7 +301,7 @@
       gtag('config', 'G-NMS0D4TY92', {
         server_container_url: 'https://goc.globaloneclick.info/goc'
       });
-    </script>
+    </script> {% endcomment %}
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     
