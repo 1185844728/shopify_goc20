@@ -296,7 +296,8 @@
 <script>
   setTimeout(function() {
     // 确保 dataLayer 已初始化
-    window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
 
     // 推送 dataLayer 事件
     window.dataLayer.push({
