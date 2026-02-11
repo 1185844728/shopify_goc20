@@ -379,7 +379,9 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-        <script>
+    </body>
+
+      <script>
       // 方式一：GA4 直接写入 (gtag.js)
       // 这种方式直接绕过 GTM，将数据发送到 G-NMS0D4TY92
       function testGA4Direct() {
@@ -410,7 +412,5 @@
         }, 10000);
       });
     </script>
-
-    </body>
 
 </html>
