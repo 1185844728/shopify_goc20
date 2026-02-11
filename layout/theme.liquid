@@ -293,27 +293,7 @@
     </script>
     </head>
 
-<script>
-  setTimeout(function() {
-    // 确保 dataLayer 已初始化
-      window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
 
-    // 推送 dataLayer 事件
-    window.dataLayer.push({
-      event: "goc_event1",
-      goc_1: 111
-    });
-
-    // 推送 gtag 事件
-    // 注意：前提是页面顶部加载 gtag.js 的代码已经运行
-    gtag('event', 'goc_event2', {
-        goc_1: 111
-      });
-
-    console.log("10秒延迟已到，代码已执行 (10)");
-  }, 10000); // 5000 毫秒 = 5 秒
-</script>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     
