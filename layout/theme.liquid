@@ -6,31 +6,9 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://goc.globaloneclick.info/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5652JKZG');</script>
     <!-- End Google Tag Manager -->
-
-    {% comment %} <script async src="https://goc.globaloneclick.info/gtag/js?id=G-NMS0D4TY92"></script> {% endcomment %}
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      gtag('js', new Date());
-
-      gtag('config', 'G-NMS0D4TY92', {
-        server_container_url: 'https://goc.globaloneclick.info'
-      });
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG1FLR1PG4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MG1FLR1PG4');
-    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -318,7 +296,7 @@
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://goc.globaloneclick.info/ns.html?id=GTM-5652JKZG"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5652JKZG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -390,7 +368,7 @@
 
     </body>
 
-      <script>
+      {% comment %} <script>
       // 方式一：GA4 直接写入 (gtag.js)
       // 这种方式直接绕过 GTM，将数据发送到 G-NMS0D4TY92
       function testGA4Direct() {
@@ -420,6 +398,6 @@
           testGTMEvent();
         }, 10000);
       });
-    </script>
+    </script> {% endcomment %}
 
 </html>
