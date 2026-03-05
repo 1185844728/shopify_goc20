@@ -437,7 +437,7 @@
       // 这种方式直接绕过 GTM，将数据发送到 G-NMS0D4TY92
       function testGA4Direct() {
         console.log('触发：GA4 直接写入');
-        gtag('event', 'test_method_ga4', {
+        gtag('event', 'test_method_ga4_v2', {
           'event_category': 'testing',
           'method_name': 'direct_gtag'
         });
