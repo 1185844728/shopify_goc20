@@ -457,7 +457,7 @@
       document.addEventListener('DOMContentLoaded', function() {
         // 为了防止页面加载太快无法捕捉，延迟 2 秒触发
         setTimeout(function() {
-          testGA4Direct();
+          {% comment %} testGA4Direct(); {% endcomment %}
           testGTMEvent();
         }, 10000);
       });
