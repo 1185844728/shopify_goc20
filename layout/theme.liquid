@@ -6,9 +6,9 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://goc.globaloneclick.info/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5652JKZG');</script>
-    <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager --> 
 
     {% comment %} <script async src="https://goc.globaloneclick.info/gtag/js?id=G-NMS0D4TY92"></script>
     <script>
@@ -20,17 +20,18 @@
       gtag('config', 'G-NMS0D4TY92', {
         server_container_url: 'https://goc.globaloneclick.info'
       });
-    </script>
+    </script> {% endcomment %}
 
-    <script async src="https://goc.globaloneclick.info/gtag/js?id=AW-10865454119"></script>
+    {% comment %} <script async src="https://goc.globaloneclick.info/gtag/js?id=AW-10865454119"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
       gtag('js', new Date());
 
-      gtag('set', 'server_container_url', 'https://goc.globaloneclick.info');
-      gtag('config', 'AW-10865454119');
+      gtag('config', 'AW-10865454119', {
+        server_container_url: 'https://goc.globaloneclick.info'
+      });
     </script> {% endcomment %}
 
    {% comment %} <!-- Google Tag Manager -->
@@ -348,20 +349,20 @@
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     
-    <!-- Google Tag Manager (noscript) -->
+    {% comment %} <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://goc.globaloneclick.info/ns.html?id=GTM-5652JKZG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) --> {% endcomment %}
 
     {% comment %} <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="/gtm/ns.html?id=GTM-5652JKZG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) --> {% endcomment %}
 
-    {% comment %} <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5652JKZG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) --> {% endcomment %}
+    <!-- End Google Tag Manager (noscript) -->
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
@@ -457,7 +458,7 @@
       document.addEventListener('DOMContentLoaded', function() {
         // 为了防止页面加载太快无法捕捉，延迟 2 秒触发
         setTimeout(function() {
-          {% comment %} testGA4Direct(); {% endcomment %}
+          testGA4Direct();
           testGTMEvent();
         }, 10000);
       });
