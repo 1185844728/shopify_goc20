@@ -464,7 +464,7 @@
       window.addEventListener(
         'message',
         function (event) {
-          console.log("走这里001")
+          console.log("走这里002")
           if (!event || !event.data || !event.data.event) {
             return;
           }
@@ -473,8 +473,6 @@
             console.log("走这里000", event)
           }
           
-          if (event.origin !== window.location.origin) return;
-
           var data = event.data;
           if (!data || typeof data !== 'object') return;
 
