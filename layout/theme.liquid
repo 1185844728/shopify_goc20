@@ -464,7 +464,10 @@
       window.addEventListener(
         'message',
         function (event) {
-          console.log("走这里222", event.origin !== window.location.origin, !data || typeof data !== 'object', typeof data.event !== 'string' || data.event !== 'product_viewed', event)
+          if (event.data.event === 'product_viewed') {
+            console.log("走这里000", event)
+          }
+          
           if (event.origin !== window.location.origin) return;
 
           var data = event.data;
@@ -475,7 +478,7 @@
 
           // 若你们自建 Pixel，更稳妥是在 postMessage 的 payload 里加唯一标记再判断：
           // if (data.__source !== 'goc-shopify-pixel') return;
-          console.log("走这里000", event)
+          console.log("走这里111", event)
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push(data);
         },
