@@ -464,7 +464,7 @@
       window.addEventListener(
         'message',
         function (event) {
-          if (!event && !event.data && !event.data.event) {
+          if (!event || !event.data || !event.data.event) {
             return;
           }
 
