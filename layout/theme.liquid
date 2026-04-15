@@ -461,6 +461,13 @@
           testGTMEvent();
         }, 10000);
       }); {% endcomment %}
+      window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) return;
+        console.log("监听到事件：", event)
+        // 按需校验 event.data 结构，避免误处理其它 postMessage
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(event.data);
+      });
     </script>
 
 </html>
