@@ -10,9 +10,7 @@
     })(window,document,'script','dataLayer','GTM-5652JKZG');</script>
     <!-- End Google Tag Manager --> 
 
-    <script async src="https://goc.globaloneclick.info/gtag/js?id=G-NMS0D4TY92"></script>
-    <script async src="https://goc.globaloneclick.info/gtag/js?id=AW-10865454119"></script>
-    {% comment %} <script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
@@ -21,8 +19,8 @@
       gtag('config', 'G-NMS0D4TY92', {
         server_container_url: 'https://goc.globaloneclick.info'
       });
-    </script> {% endcomment %}
-    {% comment %} <script async src="https://goc.globaloneclick.info/gtag/js?id=AW-10865454119"></script>
+    </script>
+    <script async src="https://goc.globaloneclick.info/gtag/js?id=AW-10865454119"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -32,7 +30,7 @@
       gtag('config', 'AW-10865454119', {
         server_container_url: 'https://goc.globaloneclick.info'
       });
-    </script> {% endcomment %}
+    </script>
 
    {% comment %} <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -474,7 +472,7 @@
             console.log("走这里000", event)
           }
           
-          if (event.origin !== window.location.origin) return;
+          {% comment %} if (event.origin !== window.location.origin) return; {% endcomment %}
 
           var data = event.data;
           if (!data || typeof data !== 'object') return;
