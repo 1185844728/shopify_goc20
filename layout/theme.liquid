@@ -454,13 +454,13 @@
       }
 
       // 自动触发测试（仅用于页面加载时测试，生产环境建议绑定在按钮上）
-      document.addEventListener('DOMContentLoaded', function() {
+      {% comment %} document.addEventListener('DOMContentLoaded', function() {
         // 为了防止页面加载太快无法捕捉，延迟 2 秒触发
         setTimeout(function() {
           testGA4Direct();
           testGTMEvent();
         }, 10000);
-      });
+      }); {% endcomment %}
     </script>
 
 </html>
