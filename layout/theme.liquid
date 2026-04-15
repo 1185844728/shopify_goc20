@@ -464,6 +464,10 @@
       window.addEventListener(
         'message',
         function (event) {
+          if (!event && !event.data && !event.data.event) {
+            return;
+          }
+
           if (event.data.event === 'product_viewed') {
             console.log("走这里000", event)
           }
