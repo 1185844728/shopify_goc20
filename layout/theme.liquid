@@ -461,13 +461,25 @@
           testGTMEvent();
         }, 10000);
       }); {% endcomment %}
-      {% comment %} window.addEventListener('message', function (event) {
-        if (event.origin !== window.location.origin) return;
-        console.log("监听到事件：", event)
-        // 按需校验 event.data 结构，避免误处理其它 postMessage
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(event.data);
-      }); {% endcomment %}
+      window.addEventListener(
+        'message',
+        function (event) {
+          if (event.origin !== window.location.origin) return;
+
+          var data = event.data;
+          if (!data || typeof data !== 'object') return;
+
+          // 示例：只接 Stape 那种带 *_stape 的 event 名（按你真实协议改）
+          if (typeof data.event !== 'string' || data.event !== 'product_viewed') return;
+
+          // 若你们自建 Pixel，更稳妥是在 postMessage 的 payload 里加唯一标记再判断：
+          // if (data.__source !== 'goc-shopify-pixel') return;
+          console.log("走这里000", event)
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push(data);
+        },
+        false
+      );
     </script>
 
 </html>
