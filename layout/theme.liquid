@@ -464,7 +464,7 @@
       window.addEventListener(
         'message',
         function (event) {
-          console.log("走这里111", event)
+          console.log("走这里222", event.origin !== window.location.origin, !data || typeof data !== 'object', typeof data.event !== 'string' || data.event !== 'product_viewed', event)
           if (event.origin !== window.location.origin) return;
 
           var data = event.data;
